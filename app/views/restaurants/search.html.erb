@@ -3,5 +3,7 @@
 <%#end%>
 
 <h1> <%= @result.name %> </h1>
-
-<h1> <%= @result.id %> </h1>
+<p> Name: <%= @result.display_phone %> </p>
+<p> Rating: <%= @result.rating %> </p>
+<p> Address: <%= @result.location.display_address %> </p>
+<p> Yelp: <%= @result.url %> </p>
