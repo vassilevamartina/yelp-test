@@ -8,19 +8,23 @@ class RestaurantsController < ApplicationController
   end
 
 
+  # def search
+  #   # parameters = { term: params[:term], limit: 16 }
+  #   params = { term: 'food',
+  #          limit: 3
+  #        }
+
+  #   # render json: Yelp.client.search('Santa Monica', parameters)
+  #   @search = Yelp.client.search('Santa Monica', params)
+  #   # raise @search
+  #   # render json: Yelp.client.inspect
+
+  # end
+
+# end
+
   def search
-    # parameters = { term: params[:term], limit: 16 }
-    params = { term: 'food',
-           limit: 3
-         }
-
-    # render json: Yelp.client.search('Santa Monica', parameters)
-    @search = Yelp.client.search('Santa Monica', params)
-    # raise @search
-    # render json: Yelp.client.inspect
-
-    
-
+    parameters = { term: params[:term], limit: 16 }
+    render json: Yelp.client.search('San Francisco', parameters)
   end
-
 end
