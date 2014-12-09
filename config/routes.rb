@@ -4,13 +4,23 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:index, :search]
   end
 
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  resources :sessions
+  resources :users
+  resources :photos
+
+  root 'users#index'
+
   get 'restaurants/' => 'restaurants#index' 
 
   get 'restaurants/search' => 'restaurants#search'
 
   post 'restaurants/query' => 'restaurants#query', as: :restaurants_query
 
-  root 'application#index'
+  # root 'application#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
