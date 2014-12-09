@@ -2,9 +2,10 @@ require 'yelp'
 
 class RestaurantsController < ApplicationController
 
+  # skip_before_filter :authorize
+
   def index
     @restaurants =  Restaurant.all
-
   end
 
 

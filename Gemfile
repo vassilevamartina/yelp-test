@@ -10,7 +10,10 @@ group :development do
 end
 
 gem 'httparty'
-
+# Use bcrypt for authentication 
+gem 'bcrypt', '~> 3.1.7'
+# Use paperclip!
+gem "paperclip", "~> 4.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
