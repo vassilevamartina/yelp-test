@@ -1,0 +1,16 @@
+{
+  "name": "bower-rails generated lib assets",
+  "lib": {
+    "dependencies": {
+      "angular": "latest",
+      "angular-ui-router": "latest"
+    }
+  },
+  "vendor": {
+    "name": "bower-rails generated vendor assets",
+    "dependencies": {}
+  },
+  "dependencies": {
+    "angular-strap": "~2.1.4"
+  }
+}

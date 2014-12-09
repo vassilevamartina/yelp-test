@@ -3,10 +3,16 @@
 <head>
   <title>YelpTest</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.tpl.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="spaApp">
+  
+  <a ui-sref="home">Home</a>
+  <a ui-sref="about">About</a>
 
 <%= yield %>
 
