@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'yelp', require: 'yelp'
 
-gem 'dotenv-rails', :groups => [:development, :test]
-
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
@@ -14,12 +12,19 @@ gem 'httparty'
 gem 'bcrypt', '~> 3.1.7'
 # Use paperclip!
 gem "paperclip", "~> 4.2"
+
+gem 'bower-rails'
+
+gem 'angular-rails-templates'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+
+gem 'bootstrap-sass', '~> 3.2.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

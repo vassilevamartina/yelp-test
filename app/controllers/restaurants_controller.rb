@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants =  Restaurant.all
+    render json: {restaurants:'shit', status: 200}
   end
 
 
@@ -24,14 +25,20 @@ class RestaurantsController < ApplicationController
 
 # end
 
-  def search
+  def query
     query = params[:query]
     parameters = { term: params[:term], limit: 1, sort: 0 }
     response = Yelp.client.search(query, parameters)
     business = response.businesses[0].id
     @result = Yelp.client.business(business)
+
+    # render json: @result.to_json 
     # render json: @result
 
     # render json: Yelp.client.search(query, parameters)
+  end
+
+  def search
+    
   end
 end
