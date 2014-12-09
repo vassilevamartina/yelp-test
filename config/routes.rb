@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
+  scope 'api', defaults: {format: :json} do
+    resources :restaurants, only: [:index, :search]
+  end
+
   get 'restaurants/' => 'restaurants#index' 
 
   get 'restaurants/search' => 'restaurants#search'
 
-  root 'restaurants#index'
+  post 'restaurants/query' => 'restaurants#query', as: :restaurants_query
+
+  root 'application#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
