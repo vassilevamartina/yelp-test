@@ -13,5 +13,11 @@
  *= require_tree .
  *= require_self
  */
-@import 'bootstrap'
+@import 'bootstrap';
 
+.container-fluid {
+	height: 50px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	background-color: rgba(39,38,34, 0.9);
+}
