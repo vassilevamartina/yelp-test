@@ -1,6 +1,6 @@
-angular.module('spaApp', ['ui.router', 'templates', 'mgcrea.ngStrap']);
+angular.module('spaApp', ['ui.router', 'templates'])
 
-config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider) {
 
 $urlRouterProvider.otherwise('/');
 
@@ -8,8 +8,10 @@ $urlRouterProvider.otherwise('/');
 
         .state('home', {
             url: '/home',
-            templateUrl: 'home.html'
-            template: '<h1>HOME VIEW</h1>',
+            templateUrl: 'home.html',
+            // template: 
+            // '<h6>phone: {{display_phone}}</h6>'
+            // '<h6>name: {{name}}</h6><h6>phone: {{display_phone}}</h6>',
             controller: 'homeController'
         })
         .state('about', {
@@ -17,14 +19,18 @@ $urlRouterProvider.otherwise('/');
             template: '<h1>HOME VIEW</h1>'
         });
 
-
 })
 
 .controller('homeController', function($scope, api) {
 
   api.getRestaurant()
   .then(function(data){
-    $scope.data = data.data
+    console.log(data.data);
+    $scope.display_phone = data.data.display_phone;
+    $scope.name = data.data.name;
+    $scope.display_address = data.data.location.display_address;
+    $scope.display_address = data.data.location.display_address;
+    // $scope.data = data.data
   })
 
 })
@@ -35,9 +41,9 @@ $urlRouterProvider.otherwise('/');
 
           getRestaurant: function() {
 
-               var promise = $http.get('/api/restaurants')
+               var promise = $http.get('/restaurants/query', {params: {name: 'McDonalds'}})
                .then(function(response) {
-                    return response
+                    return response;
                });
                return promise;
           }
