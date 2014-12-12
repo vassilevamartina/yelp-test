@@ -12,7 +12,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="spaApp">
-  
+
+<ul class="nav nav-pills">
+  <button type="button" class="btn btn-default navbar-btn">Home</button>
+  <button type="button" class="btn btn-default navbar-btn">About</button>
+</ul>
+
+
   <a ui-sref="home">Home</a>
   <a ui-sref="about">About</a>
 
@@ -32,6 +38,5 @@
 
             <%= yield %>
         </div>
-
 </body>
 </html>

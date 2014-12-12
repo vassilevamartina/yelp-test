@@ -1,10 +1,16 @@
-<p>I'm a place holder page. I'm located in <%= users_path %> /index.html.erb </p>
-<% if current_user != nil %>
-    <% @users.each do |u| %>
-        <div class="user_box"><h1><%= u.email %></h1>
-            <% u.photos.each do |p| %>
-                <%= image_tag p.image.url(:large) %><br />
-            <% end %>
-        </div>
-    <% end %>
-<% end %>
+<div class ="background">	
+	<div class="background_img">
+		<p>I'm a place holder page. I'm located in <%= users_path %> /index.html.erb </p>
+	</div>	
+		<div class="inner-block">	
+			<% if current_user != nil %>
+			    <% @users.each do |u| %>
+			        <div class="user_box"><h1 class="emails"><%= u.email %></h1> 
+				            <% u.photos.each do |p| %> 
+				                <%= image_tag p.image.url(:large), :class => "img" %><br /><br />
+				            <% end %>  
+			        </div>
+			    <% end %>
+			<% end %>
+		</div>	
+</div>		
