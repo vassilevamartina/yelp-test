@@ -18,3 +18,22 @@
 //= require bootstrap
 //= require_tree .
 //= require_tree ../templates
+
+$('body').addClass('sticky');
+  			}
+	  	} else {
+		  	$('body').removeClass('sticky');
+		  	$('.site-nav').removeAttr('style');
+	  	}
+    });
+  
+  $('.site-nav a').click(function(e){
+    if(!$(this).hasClass('search-trigger'))
+    {
+      $('.site-nav a.active').removeClass('active');
+      $(this).addClass('active');
+    }
+    $(this).blur()
+    e.preventDefault();
+  });
+});
