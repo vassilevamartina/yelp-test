@@ -29,10 +29,11 @@ class RestaurantsController < ApplicationController
     query = 'Santa Monica'
     parameters = {term: 'food ' + name } 
     response = Yelp.client.search(query, parameters)
-    business_id = response.businesses[0].id
-    @result = Yelp.client.business(business_id)
+    @business_id = response.businesses
+    # business_id = response.businesses[0].id
+    # @result = Yelp.client.business(business_id)
 
-    render json: @result.to_json 
+    render json: @business_id.to_json 
     # render json: @result
 
     # render json: Yelp.client.search(query, parameters)
@@ -43,21 +44,4 @@ class RestaurantsController < ApplicationController
   #   render json: result, status:200
   # end
 
-end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+end 

@@ -1,5 +1,33 @@
 <!-- put an input ng-model.... maybe need to research what to use instead of ng-model in here for user input for search  (look at angular docs for directives:ngmodel). pass the user input into a $scope variable (so i can access it in my scope so i can chain it on to the name param in my app.js(line 44) so the name is dynamic and not hardcoded as mcdonalds-->
+<!-- <body ng-controller="MainCtrl">
+  <h2>List of people</h2>
+  Search: <input type="text" ng-model="search">
+  <ul>
+    <li ng-repeat="person in people | filter:search">
+      {{ person }}
+    </li>
+  </ul>
 
-<h6>name: {{name}}</h6>
-<h6>phone: {{display_phone}}</h6>
-<h6>address: {{display_address}}</h6>
+  Number of filtered people: {{people.length}}
+</body> -->
+<!-- 
+<input type='text' placeholder='Restaurant' ng-model='restaurantSearch'>
+<button type="button" ng-click=''>Search</button> -->
+
+
+<!--   //   $scope.display_phone = data.data.display_phone;
+  //   $scope.name = data.data.name;
+  //   $scope.display_address = data.data.location.display_address;
+  //   $scope.rating = data.data.rating_img_url;
+  //   $scope.url = data.data.url;
+  //   $scope.data = data.data; -->
+
+<!-- <div ng-repeat='r in restaurantData'>
+  <h6>name: {{r.hash.name}}</h6>
+  <h6>phone: {{r.hash.display_phone}}</h6>
+  <h6>address: {{r.hash.location.display_address[0]}}</h6>
+  <h6>rating: <img src={{r.hash.rating_img_url}}></img></h6>
+  <h6>url: <a href= \{\{r.hash.url\}\}></h6>
+  <br>
+</div> -->
+
