@@ -1,6 +1,5 @@
 class Photo < ActiveRecord::Base
 	belongs_to :user
-  belongs_to :places
 	has_attached_file :image,
 	:styles => {
 		:original => ['1920x1680>', :jpg],
