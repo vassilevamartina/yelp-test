@@ -1,3 +1,70 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Nixie+One);
+
+.background_img {
+	background-image: url("toomanycooks.jpg");
+	background-size: 100% 480px;
+	background-repeat: no-repeat;
+	height: 480px;
+	width: 100%;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+.title {
+	font-family: 'Nixie One', cursive;
+	font-weight: 700;
+	font-size: 100px;
+	color: white;
+	text-align: center;
+	padding-top: 150px;
+	margin-top: 0px;
+
+}
+
+.btn {
+	margin-left: 43%;
+
+}
+
+
+.img {
+	background-size:720px 480px;
+	background-position:-160px 0px;
+	height:480px;
+	width:480px;
+	border-radius:50%;
+	border: 8px solid white;
+	overflow:hidden;
+	margin:auto;
+}
+
+.user_box {
+	text-align: center;
+}
+
+.background {
+	// background-color: rgb(246,210,180);
+	background: linear-gradient(rgb(255,226,206), rgb(246,151,99), rgb(231,116,66));
+	padding: 0px;
+}
+
+.emails {
+	padding: 0px;
+	margin: 0px;
+}
+
+.inner-block {
+	height: 100%;
+	width: 700px;
+	background-color: rgb(216,216,213);
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border-left: 8px solid white;
+	border-right: 8px solid white;
+	border-radius: 18px;
+}
