@@ -8,6 +8,10 @@ group :development do
   gem "binding_of_caller"
 end
 
+group :production do
+  gem 'unicorn'
+end
+
 gem 'httparty'
 # Use bcrypt for authentication 
 gem 'bcrypt', '~> 3.1.7'
@@ -66,3 +70,4 @@ gem 'rails_12factor', '0.0.2'
 
 end
 
+ruby '2.0.0'
