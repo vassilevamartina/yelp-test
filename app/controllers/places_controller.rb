@@ -35,10 +35,14 @@ class PlacesController < ApplicationController
   # end
 
   def index
+    # set a variable equal to an instance of my query object  
     query = 'Santa Monica'
-    parameters = { term: 'food', limit: 3, sort: 0 }
+    parameters = { term: 'food', limit: 10, sort: 0 }
     response = Yelp.client.search(query, parameters)
     @results = response.businesses
+    # business_id = response.businesses[0].id
+    # @results = Yelp.client.business(business_id)
+
   end
 
 

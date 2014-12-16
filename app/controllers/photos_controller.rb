@@ -25,3 +25,9 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(:image)
   end
 end
+
+#  private
+#   def question_params
+#     params.require(:question).permit(:the_question, :user_id, :videos => [:id])
+#   end
+# end
