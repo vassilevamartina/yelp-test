@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# all that yelp stuff
 gem 'yelp', require: 'yelp'
 
 group :development do
@@ -7,11 +8,15 @@ group :development do
   gem "binding_of_caller"
 end
 
+gem 'unicorn'
+
 gem 'httparty'
 # Use bcrypt for authentication 
 gem 'bcrypt', '~> 3.1.7'
 # Use paperclip!
 gem "paperclip", "~> 4.2"
+#Use Amazon Web Services
+gem 'aws-sdk'
 
 gem 'bower-rails'
 
@@ -63,3 +68,4 @@ gem 'rails_12factor', '0.0.2'
 
 end
 
+# ruby '2.0.0'
