@@ -9,7 +9,8 @@
 			        <div class="user_box"><h1 class="emails"><%= u.email %></h1> 
 				            <% u.photos.each do |p| %> 
 				                <%= image_tag p.image.url(:large), :class => "img" %><br /><br />
-				            <% end %>  
+				            <% end %>
+				            <%= link_to "restaurant search", restaurants_search_path %>   
 			        </div>
 			    <% end %>
 			<% end %>
