@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# all that yelp stuff
 gem 'yelp', require: 'yelp'
 
 group :development do
