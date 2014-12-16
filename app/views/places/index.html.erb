@@ -1,0 +1,18 @@
+<h1>Restaurant Search</h1>
+
+<%= form_tag places_path, :method => 'post' do %>
+	<%= hidden_field_tag :query, 'Los Angeles' %>
+	<%= text_field_tag :term, params[:term] %>
+  <%= submit_tag "Search", :name => nil %>
+
+<% end %>
+
+
+<h1> <%= @results.each do |r| %>
+<p> name:          <%= r.name %> </h1>
+<p> display_phone: <%= r.display_phone %> </p>
+<p> Rating:        <%= r.rating %> </p>
+<p> Address:       <%= r.location.display_address %> </p>
+<p> Yelp:          <%= r.url %> </p>
+
+<% end %>

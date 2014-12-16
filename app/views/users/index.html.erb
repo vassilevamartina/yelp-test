@@ -10,7 +10,7 @@
 				            <% u.photos.each do |p| %> 
 				                <%= image_tag p.image.url(:large), :class => "img" %><br /><br />
 				            <% end %>
-				            <%= link_to "restaurant search", restaurants_search_path %>   
+				            <%= link_to "restaurant search", places_path %>   
 			        </div>
 			    <% end %>
 			<% end %>

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   # get 'restaurants/search' => 'restaurants#search', as: :restaurants_search
 
-  # get 'restaurants/query' => 'restaurants#query', as: :restaurants_query
+   get 'restaurants/query' => 'restaurants#query', as: :restaurants_query
 
   # root 'application#index'
   
