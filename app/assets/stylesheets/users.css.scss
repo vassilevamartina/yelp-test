@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(http://fonts.googleapis.com/css?family=Nixie+One);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 
 .background_img {
 	background-image: url("toomanycooks.jpg");
@@ -14,7 +15,8 @@
 }
 
 .title {
-	font-family: 'Nixie One', cursive;
+	font-family: 'Open Sans', sans-serif;
+	text-shadow: 2px 2px rgba(249,110,91, 0.9);
 	font-weight: 700;
 	font-size: 100px;
 	color: white;
@@ -47,7 +49,8 @@
 
 .background {
 	// background-color: rgb(246,210,180);
-	background: linear-gradient(rgb(255,226,206), rgb(246,151,99), rgb(231,116,66));
+	background: linear-gradient(rgb(255,226,206), rgb(246,151,99), (#f96e5b));
+		 // rgb(231,116,66));
 	padding: 0px;
 }
 
