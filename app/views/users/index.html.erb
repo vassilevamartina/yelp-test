@@ -1,7 +1,10 @@
 <div class ="background">	
 	<div class="background_img">	
 		<h1 class="title">CHOMP</h1>
-			<button type="button" class="btn btn-danger btn-primary btn-lg">Add a Picture</button>
+			<!-- <button type="button" class="btn btn-danger btn-primary btn-lg">Add a Picture</button> -->
+
+			<%= link_to('Add a Picture', new_photo_path, :class => 'btn btn-danger btn-primary btn-lg')  %>
+		
 	</div>	
 		<div class="inner-block">	
 			<% if current_user != nil %>
