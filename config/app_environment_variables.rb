@@ -1,0 +1,8 @@
+ENV["s3_bucket"] = "chomp-app"
+ENV["s3_access_key_id"] = "AKIAIPFAP2V7ODLOWLAA"
+ENV["s3_secret_access_key"] = "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"
+ENV["YELP_CONSUMER_KEY"] = "iv2hZ5r24Xxj-67HFiBG9A"
+ENV["YELP_CONSUMER_SECRET"] = "_rXFWGc3mXXE4Wr15FlvObsKOss"
+ENV["YELP_TOKEN"] = "652i_mFPJIofjxh-MU_6NLGct_13SXrd"
+ENV["YELP_TOKEN_SECRET"] = "r5fWuNAEKKN_ZnaX07eExLPR7rE"
+
