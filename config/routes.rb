@@ -16,11 +16,13 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  get 'places/' => 'places#index' 
+  get 'places/' => 'places#index', as: 'places' 
+
+  post 'places' => 'places#query'
 
   # get 'restaurants/search' => 'restaurants#search', as: :restaurants_search
 
-   get 'restaurants/query' => 'restaurants#query', as: :restaurants_query
+   # get 'restaurants/query' => 'restaurants#query', as: :restaurants_query
 
   # root 'application#index'
   

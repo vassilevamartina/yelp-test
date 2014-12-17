@@ -35,15 +35,37 @@ class PlacesController < ApplicationController
   # end
 
   def index
-    # set a variable equal to an instance of my query object  
-    query = 'Santa Monica'
-    parameters = { term: 'food', limit: 10, sort: 0 }
-    response = Yelp.client.search(query, parameters)
-    @results = response.businesses
+  # set a variable equal to an instance of my query object  
+    
+      query = 'Santa Monica'
+      parameters = { term: 'food', limit: 10, sort: 0 }
+      response = Yelp.client.search(query, parameters)
+      @results = response.businesses
+    
     # business_id = response.businesses[0].id
     # @results = Yelp.client.business(business_id)
 
   end
+
+   def query
+     query = params[:query]
+     term = params[:term]
+     raise query.inspect
+     parameters = { term: term, limit: 10, sort: 0 }
+     response = Yelp.client.search(query, parameters)
+     @results = response.businesses
+
+     
+   end
+     
+# +
+# +    # render json: @result.to_json 
+#      # render json: @result
+ 
+#      # render json: Yelp.client.search(query, parameters)
+#    end
+
+  
 
 
   

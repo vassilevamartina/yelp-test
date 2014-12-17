@@ -16,19 +16,38 @@
         
       <% end %>
 
-      <%= @results.each do |r| %>
-      <div class="well well-lg">
-        <div id="animated-example" class="animated fadeInLeft">
-      <h3> 
-      <p> name:          <%= r.name %> </h3>
-      <p> display_phone: <%= r.display_phone %> </p>
-      <p> Rating:        <%= r.rating %> </p>
-      <p> Address:       <%= r.location.display_address %> </p>
-      <p> Yelp:          <%= r.url %> </p>
+      <% if @results %>
+        <% @results.each do |r| %>
+        <div class="well well-lg">
+          <div id="animated-example" class="animated fadeInLeft">
+        <h3> 
+        <p> name:          <%= r.name %> </h3>
+        <p> display_phone: <%= r.display_phone %> </p>
+        <p> Rating:        <%= r.rating %> </p>
+        <p> Address:       <%= r.location.display_address %> </p>
+        <p> Yelp:          <%= r.url %> </p>
+            </div>
           </div>
-        </div>
 
+        <% end %>
       <% end %>
+
+     <!--  <% if @search_business %>
+        <% @results.each do |r| %>
+        <div class="well well-lg">
+          <div id="animated-example" class="animated fadeInLeft">
+        <h3> 
+        <p> name:          <%= r.name %> </h3>
+        <p> display_phone: <%= r.display_phone %> </p>
+        <p> Rating:        <%= r.rating %> </p>
+        <p> Address:       <%= r.location.display_address %> </p>
+        <p> Yelp:          <%= r.url %> </p>
+            </div>
+          </div>
+
+        <% end %>
+
+      <% end %> -->
       
       <!-- </div> -->
     <!-- </div> -->
