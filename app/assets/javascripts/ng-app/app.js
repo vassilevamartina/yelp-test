@@ -1,53 +1,71 @@
-angular.module('spaApp', ['ui.router', 'templates'])
+// angular.module('spaApp', ['ui.router', 'templates'])
 
-.config(function($stateProvider, $urlRouterProvider) {
+// .config(function($stateProvider, $urlRouterProvider) {
 
-$urlRouterProvider.otherwise('/');
+// $urlRouterProvider.otherwise('/');
 
-    $stateProvider
+//     $stateProvider
 
-        .state('home', {
-            url: '/home',
-            templateUrl: 'home.html',
-            // template: 
-            // '<h6>phone: {{display_phone}}</h6>'
-            // '<h6>name: {{name}}</h6><h6>phone: {{display_phone}}</h6>',
-            controller: 'homeController'
-        })
-        .state('about', {
-            url: '/about',
-            template: '<h1>HOME VIEW</h1>'
-        });
+//         .state('home', {
+//             url: '/home',
+//             templateUrl: 'home.html',
+//             // template: 
+//             // '<h6>phone: {{display_phone}}</h6>'
+//             // '<h6>name: {{name}}</h6><h6>phone: {{display_phone}}</h6>',
+//             controller: 'homeController'
+//         })
+//         .state('about', {
+//             url: '/about',
+//             template: '<h1>HOME VIEW</h1>'
+//         });
 
-})
+// })
 
-.controller('homeController', function($scope, api) {
+// .controller('homeController', function($scope, api) {
 
-  api.getRestaurant()
-  .then(function(data){
-    console.log(data.data);
-    $scope.display_phone = data.data.display_phone;
-    $scope.name = data.data.name;
-    $scope.display_address = data.data.location.display_address;
-    $scope.display_address = data.data.location.display_address;
-    // $scope.data = data.data
-  })
 
-})
+//   $scope.restaurantData = []
 
-.service('api', function($http) {
+//   api.getRestaurant('McDonalds')
+//   .then(function(data){
+    
+//     $scope.restaurantData = data.data
+//   });
 
-     return {
+//   console.log($scope.restaurantData);
 
-          getRestaurant: function() {
+//   // api.getRestaurant('Mcdonalds')
+//   // .then(function(data){
+//   //   console.log(data.data);
+//   //   $scope.display_phone = data.data.display_phone;
+//   //   $scope.name = data.data.name;
+//   //   $scope.display_address = data.data.location.display_address;
+//   //   $scope.rating = data.data.rating_img_url;
+//   //   $scope.url = data.data.url;
+//   //   $scope.data = data.data;
+//   // })
 
-               var promise = $http.get('/restaurants/query', {params: {name: 'McDonalds'}})
-               .then(function(response) {
-                    return response;
-               });
-               return promise;
-          }
+// })
 
-     }
+// // .controller('pictureController', function($scope, )
 
-});
+// .service('api', function($http) {
+
+//      return {
+
+//           getRestaurant: function(searchFor) {
+
+//                // var promise = $http.get('/restaurants/query', {params: {name: 'McDonalds'}})
+//                var promise = $http.get('/restaurants/query', {params: {name: searchFor}})
+//                .then(function(response) {
+//                     return response;
+//                });
+//                return promise;
+//           },
+
+//           // getBusiness: function()
+
+//      }
+
+// });
+

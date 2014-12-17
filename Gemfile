@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
 
+# all that yelp stuff
 gem 'yelp', require: 'yelp'
 
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
+
+gem 'unicorn'
 
 gem 'httparty'
 # Use bcrypt for authentication 
@@ -65,3 +68,4 @@ gem 'rails_12factor', '0.0.2'
 
 end
 
+# ruby '2.0.0'

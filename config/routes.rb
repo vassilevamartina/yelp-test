@@ -12,15 +12,15 @@ Rails.application.routes.draw do
   resources :users
   resources :photos
 
-  root 'application#index'
+  # root 'application#index'
 
-  # root 'users#index'
+  root 'users#index'
 
-  get 'restaurants/' => 'restaurants#index' 
+  get 'places/' => 'places#index' 
 
-  get 'restaurants/search' => 'restaurants#search'
+  # get 'restaurants/search' => 'restaurants#search', as: :restaurants_search
 
-  get 'restaurants/query' => 'restaurants#query', as: :restaurants_query
+   get 'restaurants/query' => 'restaurants#query', as: :restaurants_query
 
   # root 'application#index'
   
