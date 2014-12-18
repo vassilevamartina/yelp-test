@@ -20,6 +20,12 @@ Rails.application.routes.draw do
 
   post 'places' => 'places#query'
 
+  get 'places/new' => 'places#new'
+
+  post 'places/' => 'places#create'
+
+
+
   # get 'restaurants/search' => 'restaurants#search', as: :restaurants_search
 
    # get 'restaurants/query' => 'restaurants#query', as: :restaurants_query

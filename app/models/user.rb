@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
 	has_many :photos
 
-  has_many :places
+  has_many :places, through: :user_places
 
 	has_secure_password
 

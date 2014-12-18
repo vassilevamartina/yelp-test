@@ -1,5 +1,10 @@
-<%= form_for [@place, @photo] do |f| %>
-	<%= f.file_field :image %>
+<%= form_for(@place, :url =>{:action => 'create'}) do |f| %>
+  <%= f.file_field :image %>
+
+
+  <%= fields_for :photo do |photo_fields| %>
+  <%= photo_fields.file_field :image %>
+  <% end %>
 
   <%= form_tag places_path, :method => 'post' do %>
   <%= hidden_field_tag :query, 'Santa Monica' %>
@@ -23,4 +28,4 @@
       <% end %>
       <% end %>
 
-<% end %>	
+<% end %> 
