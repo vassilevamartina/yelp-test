@@ -52,28 +52,39 @@ class PlacesController < ApplicationController
   end
 
   def query
-     query = params[:query]
-     term = params[:term]
-     # raise query.inspect
-     parameters = { term: term, limit: 10, sort: 0 }
-     response = Yelp.client.search(query, parameters)
-     yelp_ids = Place.find_by_sql("select yelp_id from places").map(&:yelp_id)
-     puts response.businesses.inspect
-     response.businesses.each do |r|
-      Place.create(
-        name: r.name,          
-        display_phone: r.display_phone,  
-        rating: r.rating,        
-        display_address:  r.location.display_address.join("||"),     
-        yelp_url: r.url,          
-        yelp_id:  r.id   
-        ) if !yelp_ids.include? r.id 
+    query = params[:query]
+    term = params[:term]
+    # raise query.inspect
+    parameters = { term: term, limit: 10, sort: 0 }
+    response = Yelp.client.search(query, parameters)
+    place_stuff = Place.find_by_sql("SELECT id, yelp_id FROM places")
+    yelp_ids = {}
+    place_stuff.each do |p|
+      yelp_ids[p.yelp_id] = p.id
+    end
 
+    @results = []
+
+#    puts response.businesses.inspect
+    response.businesses.each do |r|
+      @results.push(r)
+      if yelp_ids.keys.include? r.id
+        # Dig up our ID based on what the found yelp ID is
+        r.class.module_eval { attr_accessor :photos }
+        r.photos = Photo.where(place_id: yelp_ids[r.id]).to_a
+      else
+        new_place = Place.create(
+          name: r.name,
+          display_phone: r.display_phone,
+          rating: r.rating,
+          display_address: r.location.display_address.join("||"),
+          yelp_url: r.url,
+          yelp_id: r.id
+          )
       end
+    end
 
-     @results = response.businesses
-
-   end
+  end
 
   def new
 
@@ -82,7 +93,6 @@ class PlacesController < ApplicationController
   end
 
   def create
-
      query = params[:query]
      term = params[:term]
      # raise query.inspect

@@ -10,28 +10,39 @@
    
 
       <%= form_tag places_path, :method => 'post' do %>
-      <%= hidden_field_tag :query, 'Santa Monica' %>
-      <%= text_field_tag :term, params[:term] %>
-      <%= submit_tag "Search", :name => nil %> <br />
-        
+        <%= hidden_field_tag :query, 'Santa Monica' %>
+        <%= text_field_tag :term, params[:term] %>
+        <%= submit_tag "Search", :name => nil %> <br />
       <% end %>
 
       <% if @results %>
         <% @results.each do |r| %>
-        <div class="well well-lg">
+          <div class="well well-lg">
           <div id="animated-example" class="animated fadeInLeft">
-        <h3> 
-        <p> name:          <%= r.name %> </h3>
-        <p> display_phone: <%= r.display_phone %> </p>
-        <p> Rating:        <%= r.rating %> </p>
-        <p> Address:       <%= r.location.display_address %> </p>
-        <p> Yelp:          <%= r.url %> </p>
-        <p> Id:            <%= r.id %> </p>
+          <h3> 
+          <p> name:          <%= r.name %> </h3>
+          <p> display_phone: <%= r.display_phone %> </p>
+          <p> Rating:        <%= r.rating %> </p>
+          <p> Address:       <%= r.location.display_address %> </p>
+          <p> Yelp:          <%= r.url %> </p>
+          <p> Id:            <%= r.id %> </p>
+              </div>
             </div>
+          <%= form_for Photo.new do |f| %>
+            <%= f.hidden_field :yelp_id, value: r.id %>
+            <%= f.file_field :image %>
+            <%= f.submit %>
+          <% end %>
+          <div class="col-md-4">
+          <% if r.photos %>
+            <% r.photos.each do |p| %>
+              <%= image_tag p.image.url(:large), :class => "img" %> </br></br>
+            <% end %>
+          <% end %>
           </div>
-
         <% end %>
       <% end %>
+
       
      <!--  <% if @search_business %>
         <% @results.each do |r| %>
@@ -54,7 +65,6 @@
     <!-- </div> -->
 
     </div>
-    <div class="col-md-4"></div> 
+    
   </div>
 </div>
-

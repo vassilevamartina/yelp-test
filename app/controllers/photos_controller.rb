@@ -7,7 +7,9 @@ class PhotosController < ApplicationController
   end
   def create
     # Find our parent decision that we should attach to
+    place_id = Place.where(yelp_id: params[:photo][:yelp_id]).first.id
     @photo = current_user.photos.new(photo_params)
+    @photo.place_id = place_id
     # @photo.date ||= DateTime.now
     # Attach this criterion to a decision
     if @photo.save

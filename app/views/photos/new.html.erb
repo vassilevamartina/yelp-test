@@ -6,7 +6,7 @@
   <%= text_field_tag :term, params[:term] %>
   <%= submit_tag "Search", :name => nil %> <br />
 
-  <% if @results %>
+<!--   <% if @results %>
         <% @results.each do |r| %>
         <div class="well well-lg">
           <div id="animated-example" class="animated fadeInLeft">
@@ -16,11 +16,11 @@
         <p> Rating:        <%= r.rating %> </p>
         <p> Address:       <%= r.location.display_address %> </p>
         <p> Yelp:          <%= r.url %> </p>
-            </div>
           </div>
+        </div>
 
         <% end %>
-      <% end %>
+      <% end %> -->
       <% end %>
 
 <% end %>	
