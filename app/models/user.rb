@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+ class User < ActiveRecord::Base
 
 	has_many :photos
 
@@ -8,12 +8,10 @@ class User < ActiveRecord::Base
 
 	validates_uniqueness_of :email
 
-	has_attached_file :download,
-                    :storage => :s3,
-                    :s3_credentials => Proc.new{|a| a.instance.s3_credentials },
-                    :s3_permissions => :private
-
-  def s3_credentials
-    {:bucket => ENV['bucket'], :access_key_id => ENV['access_key_id'], :secret_access_key => ENV['secret_access_key']}
-  end
+  has_attached_file :image,
+                :styles => { :square => ['480x480#', :jpg] },
+                :default_url => 'https://chomp-app.herokuapp.com/',
+                :storage => :s3,
+                :bucket => 'chomp-app',
+                :s3_credentials => "#{Rails.root}/config/s3.yml"
 end
