@@ -15,7 +15,10 @@
 /log/*.log
 /tmp
 /.env
+<<<<<<< HEAD
 /app_environment_variables.rb
 /.secrets.yml
+=======
 .env
 /config/app_environment_variables.rb
+>>>>>>> master
