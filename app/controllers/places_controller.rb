@@ -40,20 +40,22 @@ class PlacesController < ApplicationController
 
   # end
 
-  def index
-      query = 'Santa Monica'
-      parameters = { term: 'food', limit: 10, sort: 0 }
-      response = Yelp.client.search(query, parameters)
-      @results = response.businesses
+  # def index
+  #     query = 'Santa Monica'
+  #     parameters = { term: 'food', limit: 10, sort: 0 }
+  #     response = Yelp.client.search(query, parameters)
+  #     @results = response.businesses
     
-    # business_id = response.businesses[0].id
-    # @results = Yelp.client.business(business_id)
+  #   # business_id = response.businesses[0].id
+  #   # @results = Yelp.client.business(business_id)
 
-  end
+  # end
 
   def query
     query = params[:query]
+    query = 'Santa Monica' if !query
     term = params[:term]
+    term = 'food' if !term 
     # raise query.inspect
     parameters = { term: term, limit: 10, sort: 0 }
     response = Yelp.client.search(query, parameters)
@@ -86,11 +88,15 @@ class PlacesController < ApplicationController
 
   end
 
-  def new
+  # def show
+  #   @place = Place.find(params[:id])
+  # end
 
-    @place = Place.new
+  # def new
 
-  end
+  #   @place = Place.new
+
+  # end
 
   def create
      query = params[:query]

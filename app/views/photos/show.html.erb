@@ -1,0 +1,6 @@
+ <% if current_user.id == @photo.user_id %>
+    <%=link_to("X", @photo, {method: "delete"}) %>
+
+ <% end %>
+ 
+ <%= image_tag @photo.image.url %>

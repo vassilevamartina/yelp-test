@@ -20,7 +20,27 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @photo = Photo.find(params[:id])
 
+  end
+
+  def edit
+    @place = Place.find(params[:id])
+  end 
+
+  def update
+    @place = Place.find(params[:id])
+    if @place.update_attributes(params.require(:place).permit(:query, :photo_id))
+      redirect_to places_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to root_path
   end
 
   def photo_params

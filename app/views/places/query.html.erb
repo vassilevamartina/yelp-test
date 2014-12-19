@@ -9,11 +9,11 @@
           <!-- <div class="panel-body"> -->
    
 
-      <%= form_tag places_path, :method => 'post' do %>
+      <%= form_tag places_path, :method => 'get' do %>
         <%= hidden_field_tag :query, 'Santa Monica' %>
         <%= text_field_tag :term, params[:term] %>
         <%= submit_tag "Search", :name => nil %> <br />
-      <% end %>
+      <% end %></br>
 
       <% if @results %>
         <% @results.each do |r| %>
@@ -26,13 +26,16 @@
           <p> Address:       <%= r.location.display_address %> </p>
           <p> Yelp:          <%= r.url %> </p>
           <p> Id:            <%= r.id %> </p>
-              </div>
-            </div>
-          <%= form_for Photo.new do |f| %>
+          
+           <%= form_for Photo.new do |f| %>
+
             <%= f.hidden_field :yelp_id, value: r.id %>
             <%= f.file_field :image %>
             <%= f.submit %>
+          
           <% end %>
+          </div>
+          </div>
           <div class="col-md-4">
           <% if r.photos %>
             <% r.photos.each do |p| %>
@@ -64,7 +67,9 @@
       <!-- </div> -->
     <!-- </div> -->
 
+
     </div>
     
   </div>
+
 </div>
