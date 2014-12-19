@@ -6,14 +6,6 @@ class PhotosController < ApplicationController
     @photo =Photo.new
   end
   def create
-    AWS.config.paperclip_defaults = {
-      :storage => :s3,
-      :s3_credentials => {
-        :bucket => ENV['S3_BUCKET'],
-        :access_key_id => ENV['S3_ACCESS_KEY_ID'],
-        :secret_access_key => ENV['S3_SECRET_ACCESS_KEY']
-      }
-    }
     # Find our parent decision that we should attach to
     place_id = Place.where(yelp_id: params[:photo][:yelp_id]).first.id
     @photo = current_user.photos.new(photo_params)

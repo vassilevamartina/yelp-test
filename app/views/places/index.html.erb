@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row"
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <!-- <div class="panel panel-danger"> 
+          <div class="panel-heading"> 
+          <h3 class="panel-title">Restaurant Search</h3>
+          </div> 
+          <div class="panel-body"> -->
+         
+
+      <%= form_tag places_path, :method => 'post' do %>
+      <%= hidden_field_tag :query, 'Los Angeles' %>
+      <%= text_field_tag :term, params[:term] %>
+      <%= submit_tag "Search", :name => nil %> <br />
+        
+      <% end %>
+<!-- 
+        <% if @results %>
+        <% @results.each do |r| %>
+        <div class="well well-lg">
+          <div id="animated-example" class="animated fadeInLeft">
+        <h3> 
+        <p> name:          <%= r.name %> </h3>
+        <p> display_phone: <%= r.display_phone %> </p>
+        <p> Rating:        <%= r.rating %> </p>
+        <p> Address:       <%= r.location.display_address %> </p>
+        <p> Yelp:          <%= r.url %> </p>
+            </div>
+          </div> -->
+
+        <% end %>
+      <% end %>
+
+     <!--  <% if @search_business %>
+        <% @results.each do |r| %>
+        <div class="well well-lg">
+          <div id="animated-example" class="animated fadeInLeft">
+        <h3> 
+        <p> name:          <%= r.name %> </h3>
+        <p> display_phone: <%= r.display_phone %> </p>
+        <p> Rating:        <%= r.rating %> </p>
+        <p> Address:       <%= r.location.display_address %> </p>
+        <p> Yelp:          <%= r.url %> </p>
+            </div>
+          </div>
+
+        <% end %>
+
+      <% end %> -->
+      
+      <!-- </div> -->
+    <!-- </div> -->
+
+    </div>
+    <div class="col-md-4"></div> 
+  </div>
+</div>
