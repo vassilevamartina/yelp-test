@@ -18,4 +18,4 @@
 /app_environment_variables.rb
 /.secrets.yml
 .env
-/config/app_environment_variables.rb
+/config/locales/app_environment_variables.rb
