@@ -12,6 +12,14 @@
 			    <% @users.each do |u| %>
 			        <div class="user_box"><h1 class="emails"><%= u.email %></h1> 
 				            <% u.photos.each do |p| %>  
+                      <li>
+                        <div class="ch-item ch-img-1">
+                          <div class="ch-info">
+                            <h3>
+                <p>by Angela Duncan <a href="http://drbl.in/eOPF">View on Dribbble</a></p>
+            </div>
+        </div>
+    </li>
                   
                         <%= image_tag p.image.url(:large), :class => "img" %><br /><br />
                         <div id="animated-example" class="animated fadeInLeft">
