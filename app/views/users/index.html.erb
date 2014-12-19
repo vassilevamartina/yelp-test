@@ -3,18 +3,25 @@
 		<h1 class="title">CHOMP</h1>
 			<!-- <button type="button" class="btn btn-danger btn-primary btn-lg">Add a Picture</button> -->
 
-			<%= link_to('Add a Picture', new_photo_path, :class => 'btn btn-danger btn-primary btn-lg')  %> 
+			<!-- <%= link_to('Add a Picture', new_photo_path, :class => 'btn btn-danger btn-primary btn-lg')  %>  -->
+      <%= link_to('Restaurant Search', places_path, :class => 'btn btn-danger btn-primary btn-lg') %> 
 		
 	</div>	
 		<div class="inner-block">	
 			<% if current_user != nil %>
 			    <% @users.each do |u| %>
 			        <div class="user_box"><h1 class="emails"><%= u.email %></h1> 
-				            <% u.photos.each do |p| %> 
-				                <%= image_tag p.image.url(:large), :class => "img" %><br /><br />
-                        <%= p.place.name %>
-				            <% end %>
-				            <%= link_to "restaurant search", places_path %>   
+				            <% u.photos.each do |p| %>  
+                  
+                        <%= image_tag p.image.url(:large), :class => "img" %><br /><br />
+                        <div id="animated-example" class="animated fadeInLeft">
+                        <%= p.place.name %></br>
+                        <%= p.place.display_phone %></br>
+                        <%= p.place.display_address %></br>
+                        <a href="<%=p.place.yelp_url %>">Yelp Reviews</a>
+                        
+                        </div> 
+				            <% end %> </br> </br>  
 			        </div>
 			    <% end %>
 			<% end %>
@@ -22,19 +29,20 @@
 		<div id="demo">
 		 </div>	
 </div>		
-<script>
-var x = document.getElementById("demo");
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude; 
-}
-getLocation();
-showPosition();
-</script>
+
+ <!-- var x = document.getElementById("demo"); -->
+ <!-- function getLocation() {
+     if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(showPosition);
+     } else {
+         x.innerHTML = "Geolocation is not supported by this browser.";
+     }
+      }
+ function showPosition(position) {
+     x.innerHTML = "Latitude: " + position.coords.latitude + 
+     "<br>Longitude: " + position.coords.longitude; 
+ }
+ getLocation();
+ showPosition();
+ 
+ -->
