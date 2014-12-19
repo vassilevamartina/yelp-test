@@ -12,17 +12,24 @@ Rails.application.routes.draw do
   resources :users
   resources :photos
 
+  get 'places' => 'places#query'
+
+  resources :places
+
   # root 'application#index'
 
   root 'users#index'
 
-  get 'places/' => 'places#index', as: 'places' 
 
-  post 'places' => 'places#query'
 
-  get 'places/new' => 'places#new'
+  # get 'places/' => 'places#index', as: 'places' 
 
-  post 'places/' => 'places#create'
+
+  # get 'places/new' => 'places#new'
+
+  # post 'places/' => 'places#create'
+
+  # delete 'places/:id' => 'places#destroy'
 
 
 

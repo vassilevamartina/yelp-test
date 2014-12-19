@@ -11,24 +11,14 @@
 			<% if current_user != nil %>
 			    <% @users.each do |u| %>
 			        <div class="user_box"><h1 class="emails"><%= u.email %></h1> 
-				            <% u.photos.each do |p| %>  
-                      <li>
-                        <div class="ch-item ch-img-1">
-                          <div class="ch-info">
-                            <h3>
-                <p>by Angela Duncan <a href="http://drbl.in/eOPF">View on Dribbble</a></p>
-            </div>
-        </div>
-    </li>
-                  
-                        <%= image_tag p.image.url(:large), :class => "img" %><br /><br />
-                        <div id="animated-example" class="animated fadeInLeft">
-                        <%= p.place.name %></br>
-                        <%= p.place.display_phone %></br>
-                        <%= p.place.display_address %></br>
-                        <a href="<%=p.place.yelp_url %>">Yelp Reviews</a>
-                        
-                        </div> 
+				        <% u.photos.each do |p| %>  
+                       
+                            <%= image_tag p.image.url(:large), :class => "img" %><br /><br />
+                            </h3><%= p.place.name %></h3></br>
+                            <p><%= p.place.display_phone %></br>
+                            <%= p.place.display_address %></br>
+                            <a href="<%=p.place.yelp_url %>">Yelp Reviews</a></p>
+                            
 				            <% end %> </br> </br>  
 			        </div>
 			    <% end %>
