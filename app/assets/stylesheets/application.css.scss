@@ -23,6 +23,17 @@ html *
    font-family: 'Open Sans', sans-serif;
 }
 
+.background {
+  // background-color: rgb(246,210,180);
+  background: linear-gradient(rgb(255,226,206), rgb(246,151,99), (#f96e5b)) no-repeat center center fixed; 
+  background-size: cover;
+  height: 100%;
+  padding: 0px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 #cssmenu {
   background-color: rgba(249,110,91, 0.9);
   // rgb(217,83,79);

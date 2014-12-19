@@ -48,12 +48,26 @@
 	text-align: center;
 }
 
-.background {
-	// background-color: rgb(246,210,180);
-	background: linear-gradient(rgb(255,226,206), rgb(246,151,99), (#f96e5b));
-		 // rgb(231,116,66));
-	padding: 0px;
+.sign-in {
+	font-family: 'Open Sans', sans-serif;
+	height: 100%;
+	width: 700px;
+	background-color: rgb(216,216,213);
+	padding-bottom: 40px;
+	padding-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	text-align: center;
+
 }
+
+// .background {
+// 	// background-color: rgb(246,210,180);
+// 	background: linear-gradient(rgb(255,226,206), rgb(246,151,99), (#f96e5b));
+// 		 // rgb(231,116,66));
+// 	padding: 0px;
+// }
 
 .btn {
 	font-family: 'Open Sans', sans-serif;
@@ -76,5 +90,21 @@
 	border-left: 8px solid white;
 	border-right: 8px solid white;
 	border-radius: 18px;
+}
+
+
+.sign-up {
+	font-family: 'Open Sans', sans-serif;
+	height: 100%;
+	width: 700px;
+	background-color: rgb(216,216,213);
+	padding-bottom: 40px;
+	padding-top: 40px;
+	margin-top: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	text-align: center;
+
 }
 
