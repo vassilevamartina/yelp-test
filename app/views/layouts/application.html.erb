@@ -9,35 +9,34 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>
-  
+<body class="background">
+
 <!--   <a ui-sref="home">Home</a>
   <a ui-sref="about">About</a> -->
 
-<div id='cssmenu'>
-<ul>
-   <li class='active'><a href='/users'><span>Home</span></a></li>
-     <li class="session"><a href='sessions/new'><span>Sign In</span></a></li>
-     <li class='last'><a href='users/new'><span>Sign Up</span></a></li>
-     <li class="session"> 
-                        <% if current_user %>
-                      <!-- Logged in as <%#= current_user.email %>. -->
-                      <%= link_to "Log Out", logout_path %>
-                    <%# else %>
-                      <%#= link_to "Sign Up", signup_path %><!--  or -->
-                      <%#= link_to "Log In", login_path %>
-                    <% end %>
-               </div> 
-             <% flash.each do |name,msg| %>
-                    <%= content_tag :div, msg, id: "flash_#{name}" %>
-                <% end %>
-                </div> 
+    <div id='cssmenu'>
+    <ul>
+       <li class='active'><a href='/users'><span>Home</span></a></li>
+         <li class="session"><a href='sessions/new'><span>Sign In</span></a></li>
+         <li class='last'><a href='users/new'><span>Sign Up</span></a></li>
+         <li class="session"> 
+                            <% if current_user %>
+                              <!-- Logged in as <%#= current_user.email %>. -->
+                              <%= link_to "Log Out", logout_path %>
+                            <%# else %>
+                              <%#= link_to "Sign Up", signup_path %><!--  or -->
+                              <%#= link_to "Log In", login_path %>
+                            <% end %>
+                 <%# flash.each do |name,msg| %>
+                        <%#= content_tag :div, msg, id: "flash_#{name}" %>
+                    <%# end %>
+    </div> 
       </li>          
 </ul>
-</div>
+  </div>
 
 
-
+  <!-- </div> -->
 </body>
 <html>
       
