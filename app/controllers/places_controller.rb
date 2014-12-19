@@ -108,7 +108,6 @@ class PlacesController < ApplicationController
     end
   end
 
-
   private 
 
   def place_params
