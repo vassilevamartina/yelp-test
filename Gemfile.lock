@@ -87,13 +87,10 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
-    mini_portile (0.6.1)
     minitest (5.5.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    nokogiri (1.6.5)
-      mini_portile (~> 0.6.0)
     paperclip (4.2.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -173,7 +170,6 @@ PLATFORMS
 DEPENDENCIES
   angular-rails-templates
   aws-s3
-  aws-sdk
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
