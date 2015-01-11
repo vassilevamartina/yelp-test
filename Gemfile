@@ -17,7 +17,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use paperclip!
 gem "paperclip", "~> 4.2"
 #Use Amazon Web Services
-gem 'aws-sdk'
+gem 'aws-s3'
 
 gem 'bower-rails'
 
