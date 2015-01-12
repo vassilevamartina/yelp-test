@@ -11,8 +11,8 @@
   has_attached_file :image,
                 :styles => { :square => ['480x480#', :jpg] },
                 :storage => :s3,
-                # :bucket => 'chomp-app',
-                :bucket => ENV['S3_BUCKET'],
+                :bucket => 'chomp-app',
+                # :bucket => ENV['S3_BUCKET'],
                 :url => ':s3_domain_url',
                 :path => ':class/:attachment/:id/:style/:filename',
                  :s3_credentials => {

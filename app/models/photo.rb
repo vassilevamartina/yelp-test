@@ -10,7 +10,7 @@ class Photo < ActiveRecord::Base
                     :large    => '500x500>'
                   },
                 :storage => :s3,
-                # :bucket => 'chomp-app',
+                :bucket => 'chomp-app',
                 #:url => ':s3_domain_url',
                 # :s3_credentials => '#{Rails.root}/config/app_environment_variables.rb',
                 :path => ':class/:attachment/:id/:style/:filename',
@@ -19,7 +19,7 @@ class Photo < ActiveRecord::Base
                    :access_key_id => ENV['S3_ACCESS_KEY_ID'],
                    :secret_access_key => ENV['S3_SECRET_ACCESS_KEY']
                  },
-                :bucket => ENV['S3_BUCKET'],
+                # :bucket => ENV['S3_BUCKET'],
                 :use_timestamp => false
 
 	validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
