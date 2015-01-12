@@ -11,14 +11,17 @@
   has_attached_file :image,
                 :styles => { :square => ['480x480#', :jpg] },
                 :storage => :s3,
-                :bucket => 'chomp-app',
+                # :bucket => 'chomp-app',
+                :bucket => ENV['S3_BUCKET'],
                 :url => ':s3_domain_url',
                 :path => ':class/:attachment/:id/:style/:filename',
-                :s3_credentials => {
-                  :bucket => ENV['s3_bucket'],
-                  :access_key_id => ENV['s3_access_key_id'],
-                  :secret_access_key => ENV['s3_secret_access_key']
-                }
+                 :s3_credentials => {
+                   :bucket => ENV['S3_BUCKET'],
+                   :access_key_id => ENV['S3_ACCESS_KEY_ID'],
+                   :secret_access_key => ENV['S3_SECRET_ACCESS_KEY']
+                 }
+                # :s3_credentials => '#{Rails.root}/config/app_environment_variables.rb',
+                
   
                
 end
