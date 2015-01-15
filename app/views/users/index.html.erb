@@ -10,7 +10,7 @@
 		<div class="inner-block">	
 			<% if current_user != nil %>
 			    <% @users.each do |u| %>
-			        <div class="user_box"><h1 class="emails"><% u.email %></h1> 
+			        <div class="user_box"><h1 class="emails"><br><% u.email %></h1> 
 				        <% u.photos.each do |p| %>  
                        
                             <%= image_tag p.image.url(:large), :class => "img" %><br /><br />
