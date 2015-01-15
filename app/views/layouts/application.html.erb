@@ -10,33 +10,26 @@
 </head>
 
 <body class="background">
-
-<!--   <a ui-sref="home">Home</a>
-  <a ui-sref="about">About</a> -->
-
-    <div id='cssmenu'>
+  
+  <div id='cssmenu'>
     <ul>
-       <li class='active'><a href='/users'><span>Home</span></a></li>
-         <li class="session"><a href='sessions/new'><span>Sign In</span></a></li>
-         <li class='last'><a href='users/new'><span>Sign Up</span></a></li>
-         <li class="session"> 
-                            <% if current_user %>
-                              <!-- Logged in as <%#= current_user.email %>. -->
-                              <%= link_to "Log Out", logout_path %>
-                            <%# else %>
-                              <%#= link_to "Sign Up", signup_path %><!--  or -->
-                              <%#= link_to "Log In", login_path %>
-                            <% end %>
+
+      <% if current_user %>
+        <!-- Logged in as <%#= current_user.email %>. -->
+      <li class='active'><%= link_to "Home", users_path %></li>
+      <li class='session'><%= link_to "Log Out", logout_path %></li>
+
+      <% else %>
+      <li class='last'><%= link_to "Sign Up", new_user_path, method: :get %></li><!--  or -->
+      <li class="session"><%= link_to "Log In", new_session_path, method: :get %></li>
+      <% end %>
                  <%# flash.each do |name,msg| %>
                         <%#= content_tag :div, msg, id: "flash_#{name}" %>
                     <%# end %>
-    </div> 
-      </li>          
-</ul>
+
+    </ul>
   </div>
 
-
-  <!-- </div> -->
 </body>
 <html>
       
